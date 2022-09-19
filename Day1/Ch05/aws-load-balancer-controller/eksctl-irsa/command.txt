@@ -6,3 +6,17 @@ eksctl create iamserviceaccount \
   --attach-policy-arn=arn:aws:iam::<AWS 계정 ID>:policy/AWSLoadBalancerControllerIAMPolicy \
   --override-existing-serviceaccounts \
   --approve
+
+
+## Real example ##
+eksctl create iamserviceaccount \
+  --cluster=skt-user12-test-eks-cluster \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --role-name "skt-user12-AmazonEKSLoadBalancerControllerRole" \
+  --attach-policy-arn=arn:aws:iam::255380800200:policy/skt-user12-AWSLoadBalancerControllerIAMPolicy \
+  --override-existing-serviceaccounts \
+  --approve
+
+## 수행 결과 확인 ##
+kubectl get serviceaccount aws-load-balancer-controller -o yaml -n kube-system

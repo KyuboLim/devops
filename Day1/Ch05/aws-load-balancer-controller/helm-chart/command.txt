@@ -8,3 +8,14 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.name=aws-load-balancer-controller
 helm list
 kubectl get deployment -n kube-system aws-load-balancer-controller
+
+## Real Example ##
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+  -n kube-system \
+  --set clusterName=skt-user12-test-eks-cluster \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller
+
+## Helm 조회 / 삭제 ##
+helm ls -A
+helm delete -n kube-system aws-load-balancer-controller
