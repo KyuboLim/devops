@@ -18,10 +18,6 @@ resource "aws_security_group_rule" "test-sg-eks-cluster-ingress" {
   to_port           = 0
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
-
-  tags = {
-    Name = "skt-user12-test-sg-eks-cluster-ingress"
-  }
 }
 
 resource "aws_security_group_rule" "test-sg-eks-cluster-egress" {
@@ -33,8 +29,4 @@ resource "aws_security_group_rule" "test-sg-eks-cluster-egress" {
   to_port           = 0
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
-
-  tags = {
-    Name = "skt-user12-test-sg-eks-cluster-egress"
-  }
 }
