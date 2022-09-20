@@ -82,3 +82,6 @@ terraform.rc
 
 # IntelliJ
 .idea
+
+# Gradle
+**/.gradle/*
