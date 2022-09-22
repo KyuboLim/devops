@@ -272,7 +272,10 @@ alertmanager:
     # See https://kubernetes.io/blog/2020/04/02/improvements-to-the-ingress-api-in-kubernetes-1.18/#specifying-the-class-of-an-ingress
     ingressClassName: alb
 
-    annotations: {}
+    annotations:
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/target-type: ip
+      alb.ingress.kubernetes.io/subnets: subnet-02a7c89dca643897c, subnet-0143d3c72e8665af6
     labels: {}
 
     ## Redirect ingress to an additional defined port on the service
