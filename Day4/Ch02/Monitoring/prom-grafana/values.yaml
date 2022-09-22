@@ -761,7 +761,7 @@ grafana:
     annotations:
       alb.ingress.kubernetes.io/scheme: internet-facing
       alb.ingress.kubernetes.io/target-type: ip
-      alb.ingress.kubernetes.io/subnets: <Subnet IDs>
+      alb.ingress.kubernetes.io/subnets: subnet-02a7c89dca643897c, subnet-0143d3c72e8665af6
       # kubernetes.io/ingress.class: nginx
       # kubernetes.io/tls-acme: "true"
 
